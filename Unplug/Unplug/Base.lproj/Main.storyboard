@@ -49,20 +49,30 @@
         <!--View Controller-->
         <scene sceneID="fxA-hX-giB">
             <objects>
-                <viewController id="9Kb-sq-xvF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Setup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Kb-sq-xvF" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jYC-Lb-cHD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setup or Scan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJJ-HX-E9V">
-                                <rect key="frame" x="132" y="294" width="110" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaD-yj-N5v">
+                                <rect key="frame" x="157.5" y="288.5" width="59" height="30"/>
+                                <state key="normal" title="Scan QR"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqo-Ym-wX5">
+                                <rect key="frame" x="145.5" y="348.5" width="84" height="30"/>
+                                <state key="normal" title="Setup Room"/>
+                                <connections>
+                                    <segue destination="73k-Wc-0xq" kind="show" id="vsT-Ir-BBh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lqo-Ym-wX5" firstAttribute="centerY" secondItem="jYC-Lb-cHD" secondAttribute="centerY" constant="30" id="E0l-It-qZR"/>
+                            <constraint firstItem="AaD-yj-N5v" firstAttribute="centerY" secondItem="jYC-Lb-cHD" secondAttribute="centerY" constant="-30" id="OwX-PV-kwO"/>
+                            <constraint firstItem="Lqo-Ym-wX5" firstAttribute="centerX" secondItem="jYC-Lb-cHD" secondAttribute="centerX" id="Xuc-VT-xha"/>
+                            <constraint firstItem="AaD-yj-N5v" firstAttribute="centerX" secondItem="jYC-Lb-cHD" secondAttribute="centerX" id="x8h-Pv-VKL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9jc-Q3-edK"/>
                     </view>
                 </viewController>
@@ -73,7 +83,7 @@
         <!--View Controller-->
         <scene sceneID="OMx-sh-MHV">
             <objects>
-                <viewController id="73k-Wc-0xq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GenerateQR" useStoryboardIdentifierAsRestorationIdentifier="YES" id="73k-Wc-0xq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qne-4H-Ru8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
