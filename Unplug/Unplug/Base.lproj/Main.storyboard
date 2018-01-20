@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="337" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="fxA-hX-giB">
             <objects>
-                <viewController storyboardIdentifier="Setup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Kb-sq-xvF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Setup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Kb-sq-xvF" customClass="MenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jYC-Lb-cHD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +57,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaD-yj-N5v">
                                 <rect key="frame" x="157.5" y="288.5" width="59" height="30"/>
                                 <state key="normal" title="Scan QR"/>
+                                <connections>
+                                    <action selector="scanQRCode:" destination="9Kb-sq-xvF" eventType="touchUpInside" id="yWr-Cw-Rso"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqo-Ym-wX5">
                                 <rect key="frame" x="145.5" y="348.5" width="84" height="30"/>

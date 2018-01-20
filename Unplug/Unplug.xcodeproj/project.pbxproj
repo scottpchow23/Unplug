@@ -17,6 +17,11 @@
 		B8977BD32013F21000633F51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BD22013F21000633F51 /* User.m */; };
 		B8977BD72013F5D000633F51 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BD62013F5D000633F51 /* FirebaseHelper.m */; };
 		B8977BDA201405C900633F51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8977BD9201405C900633F51 /* GoogleService-Info.plist */; };
+		F11E69D120140B6B005EF6C1 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69CA20140B6B005EF6C1 /* QRCameraSwitchButton.m */; };
+		F11E69D220140B6B005EF6C1 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69CC20140B6B005EF6C1 /* QRCodeReaderViewController.m */; };
+		F11E69D320140B6B005EF6C1 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69CD20140B6B005EF6C1 /* QRCodeReaderView.m */; };
+		F11E69D420140B6B005EF6C1 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69D020140B6B005EF6C1 /* QRCodeReader.m */; };
+		F11E69D720140BB0005EF6C1 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69D620140BB0005EF6C1 /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,17 @@
 		B8977BD52013F5D000633F51 /* FirebaseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
 		B8977BD62013F5D000633F51 /* FirebaseHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseHelper.m; sourceTree = "<group>"; };
 		B8977BD9201405C900633F51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F11E69C820140B6B005EF6C1 /* QRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderView.h; sourceTree = "<group>"; };
+		F11E69C920140B6B005EF6C1 /* QRCodeReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderDelegate.h; sourceTree = "<group>"; };
+		F11E69CA20140B6B005EF6C1 /* QRCameraSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCameraSwitchButton.m; sourceTree = "<group>"; };
+		F11E69CB20140B6B005EF6C1 /* QRCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReader.h; sourceTree = "<group>"; };
+		F11E69CC20140B6B005EF6C1 /* QRCodeReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderViewController.m; sourceTree = "<group>"; };
+		F11E69CD20140B6B005EF6C1 /* QRCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReaderView.m; sourceTree = "<group>"; };
+		F11E69CE20140B6B005EF6C1 /* QRCameraSwitchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCameraSwitchButton.h; sourceTree = "<group>"; };
+		F11E69CF20140B6B005EF6C1 /* QRCodeReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderViewController.h; sourceTree = "<group>"; };
+		F11E69D020140B6B005EF6C1 /* QRCodeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReader.m; sourceTree = "<group>"; };
+		F11E69D520140BB0005EF6C1 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		F11E69D620140BB0005EF6C1 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,7 @@
 		B8977BAF2013DF3500633F51 /* Unplug */ = {
 			isa = PBXGroup;
 			children = (
+				F11E69C720140B6B005EF6C1 /* QR */,
 				B8977BD82013F5D900633F51 /* Firebase */,
 				B8977BD42013F21400633F51 /* Models */,
 				B8977BB02013DF3500633F51 /* AppDelegate.h */,
@@ -94,6 +111,8 @@
 				B8977BBE2013DF3500633F51 /* Info.plist */,
 				B8977BBF2013DF3500633F51 /* main.m */,
 				B8977BD9201405C900633F51 /* GoogleService-Info.plist */,
+				F11E69D520140BB0005EF6C1 /* MenuViewController.h */,
+				F11E69D620140BB0005EF6C1 /* MenuViewController.m */,
 			);
 			path = Unplug;
 			sourceTree = "<group>";
@@ -122,6 +141,22 @@
 				9A634E29061E213749DEBED5 /* libPods-Unplug.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F11E69C720140B6B005EF6C1 /* QR */ = {
+			isa = PBXGroup;
+			children = (
+				F11E69C820140B6B005EF6C1 /* QRCodeReaderView.h */,
+				F11E69C920140B6B005EF6C1 /* QRCodeReaderDelegate.h */,
+				F11E69CA20140B6B005EF6C1 /* QRCameraSwitchButton.m */,
+				F11E69CB20140B6B005EF6C1 /* QRCodeReader.h */,
+				F11E69CC20140B6B005EF6C1 /* QRCodeReaderViewController.m */,
+				F11E69CD20140B6B005EF6C1 /* QRCodeReaderView.m */,
+				F11E69CE20140B6B005EF6C1 /* QRCameraSwitchButton.h */,
+				F11E69CF20140B6B005EF6C1 /* QRCodeReaderViewController.h */,
+				F11E69D020140B6B005EF6C1 /* QRCodeReader.m */,
+			);
+			path = QR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,11 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F11E69D220140B6B005EF6C1 /* QRCodeReaderViewController.m in Sources */,
+				F11E69D320140B6B005EF6C1 /* QRCodeReaderView.m in Sources */,
 				B8977BD32013F21000633F51 /* User.m in Sources */,
+				F11E69D120140B6B005EF6C1 /* QRCameraSwitchButton.m in Sources */,
 				B8977BB52013DF3500633F51 /* ViewController.m in Sources */,
+				F11E69D420140B6B005EF6C1 /* QRCodeReader.m in Sources */,
 				B8977BD72013F5D000633F51 /* FirebaseHelper.m in Sources */,
 				B8977BC02013DF3500633F51 /* main.m in Sources */,
 				B8977BB22013DF3500633F51 /* AppDelegate.m in Sources */,
+				F11E69D720140BB0005EF6C1 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
