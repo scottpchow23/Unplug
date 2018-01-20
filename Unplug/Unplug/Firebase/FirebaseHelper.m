@@ -50,4 +50,8 @@ static FirebaseHelper *sharedAPIWrapper;
     return currentUser;
 }
 
+-(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
+    
+}
+
 @end

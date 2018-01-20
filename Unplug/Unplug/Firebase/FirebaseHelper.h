@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <FirebaseDatabase/FirebaseDatabase.h>
+#import <FBSDKLoginKit.h>
 #import "User.h"
 
 @interface FirebaseHelper : NSObject {
@@ -23,4 +24,6 @@
 
 -(void)setCurrentUser:(User *) user;
 -(User *)getCurrentUser;
+
+-(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error;
 @end

@@ -14,9 +14,9 @@
 		B8977BBA2013DF3500633F51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8977BB92013DF3500633F51 /* Assets.xcassets */; };
 		B8977BBD2013DF3500633F51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8977BBB2013DF3500633F51 /* LaunchScreen.storyboard */; };
 		B8977BC02013DF3500633F51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BBF2013DF3500633F51 /* main.m */; };
-		B8977BC72013E56C00633F51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8977BC62013E56C00633F51 /* GoogleService-Info.plist */; };
 		B8977BD32013F21000633F51 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BD22013F21000633F51 /* User.m */; };
 		B8977BD72013F5D000633F51 /* FirebaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BD62013F5D000633F51 /* FirebaseHelper.m */; };
+		B8977BDA201405C900633F51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8977BD9201405C900633F51 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +33,11 @@
 		B8977BBC2013DF3500633F51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8977BBE2013DF3500633F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8977BBF2013DF3500633F51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B8977BC62013E56C00633F51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8977BD12013F21000633F51 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		B8977BD22013F21000633F51 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		B8977BD52013F5D000633F51 /* FirebaseHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseHelper.h; sourceTree = "<group>"; };
 		B8977BD62013F5D000633F51 /* FirebaseHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirebaseHelper.m; sourceTree = "<group>"; };
+		B8977BD9201405C900633F51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 				B8977BBB2013DF3500633F51 /* LaunchScreen.storyboard */,
 				B8977BBE2013DF3500633F51 /* Info.plist */,
 				B8977BBF2013DF3500633F51 /* main.m */,
-				B8977BC62013E56C00633F51 /* GoogleService-Info.plist */,
+				B8977BD9201405C900633F51 /* GoogleService-Info.plist */,
 			);
 			path = Unplug;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8977BBD2013DF3500633F51 /* LaunchScreen.storyboard in Resources */,
-				B8977BC72013E56C00633F51 /* GoogleService-Info.plist in Resources */,
+				B8977BDA201405C900633F51 /* GoogleService-Info.plist in Resources */,
 				B8977BBA2013DF3500633F51 /* Assets.xcassets in Resources */,
 				B8977BB82013DF3500633F51 /* Main.storyboard in Resources */,
 			);
