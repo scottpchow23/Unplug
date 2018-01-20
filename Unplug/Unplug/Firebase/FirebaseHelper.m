@@ -50,8 +50,40 @@ static FirebaseHelper *sharedAPIWrapper;
     return currentUser;
 }
 
--(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
-    
+-(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error completion:(void (^)(BOOL)) completion {
+    if (error == nil && !result.isCancelled) {
+        
+        FIRAuthCredential *credential = [FIRFacebookAuthProvider credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
+        [[FIRAuth auth] signInWithCredential:credential completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+            if (error != NULL) {
+                return;
+            }
+            [FirebaseHelper.sharedWrapper getUserWithUID:user.uid completion:^(User *user) {
+                if (user == NULL) {
+                    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields":@"name"}] startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                        if (error) {
+                            NSLog(@"%@", error.localizedDescription);
+                        } else {
+                            NSLog(@"fetched user:%@", result);
+                            User *newUser = [[User alloc] init];
+                            newUser.uid = [[FIRAuth auth] currentUser].uid;
+                            newUser.name = [result objectForKey:@"name"];
+                            newUser.balance = @0;
+                            [FirebaseHelper.sharedWrapper createUser:newUser];
+                            [FirebaseHelper.sharedWrapper setCurrentUser:newUser];
+                        }
+                    }];
+                } else {
+                    [FirebaseHelper.sharedWrapper setCurrentUser:user];
+                }
+                //                TODO: Transition Here
+                completion(YES);
+            }];
+        }];
+    } else {
+        NSLog(@"%@", error.localizedDescription);
+        completion(NO);
+    }
 }
 
 @end

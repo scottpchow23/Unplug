@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <FirebaseDatabase/FirebaseDatabase.h>
+#import <FirebaseAuth/FirebaseAuth.h>
+#import <FBSDKCoreKit.h>
 #import <FBSDKLoginKit.h>
 #import "User.h"
 
@@ -25,5 +27,5 @@
 -(void)setCurrentUser:(User *) user;
 -(User *)getCurrentUser;
 
--(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error;
+-(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error completion:(void (^)(BOOL)) completion;
 @end

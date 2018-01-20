@@ -29,7 +29,11 @@
 }
 
 - (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error {
-    
+    [FirebaseHelper.sharedWrapper handleLogin:result error:error completion:^(BOOL completed) {
+        if(completed) {
+            [self performSegueWithIdentifier:@"toSetup" sender:self];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
