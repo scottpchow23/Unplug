@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81961E32ACCE76C26BA146E9 /* libPods-Unplug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A634E29061E213749DEBED5 /* libPods-Unplug.a */; };
 		B8977BB22013DF3500633F51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BB12013DF3500633F51 /* AppDelegate.m */; };
 		B8977BB52013DF3500633F51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BB42013DF3500633F51 /* ViewController.m */; };
 		B8977BB82013DF3500633F51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8977BB62013DF3500633F51 /* Main.storyboard */; };
 		B8977BBA2013DF3500633F51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8977BB92013DF3500633F51 /* Assets.xcassets */; };
 		B8977BBD2013DF3500633F51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8977BBB2013DF3500633F51 /* LaunchScreen.storyboard */; };
 		B8977BC02013DF3500633F51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BBF2013DF3500633F51 /* main.m */; };
+		B8977BC72013E56C00633F51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8977BC62013E56C00633F51 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		856D6302B995B6B90B3F0E76 /* Pods-Unplug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unplug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unplug/Pods-Unplug.debug.xcconfig"; sourceTree = "<group>"; };
+		91E933AAAA14C9980B1F60E3 /* Pods-Unplug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unplug.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unplug/Pods-Unplug.release.xcconfig"; sourceTree = "<group>"; };
+		9A634E29061E213749DEBED5 /* libPods-Unplug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Unplug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8977BAD2013DF3500633F51 /* Unplug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unplug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8977BB02013DF3500633F51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8977BB12013DF3500633F51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		B8977BBC2013DF3500633F51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8977BBE2013DF3500633F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8977BBF2013DF3500633F51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B8977BC62013E56C00633F51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81961E32ACCE76C26BA146E9 /* libPods-Unplug.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BF5AD925056E7A2FDB495F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				856D6302B995B6B90B3F0E76 /* Pods-Unplug.debug.xcconfig */,
+				91E933AAAA14C9980B1F60E3 /* Pods-Unplug.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B8977BA42013DF3500633F51 = {
 			isa = PBXGroup;
 			children = (
 				B8977BAF2013DF3500633F51 /* Unplug */,
 				B8977BAE2013DF3500633F51 /* Products */,
+				3BF5AD925056E7A2FDB495F4 /* Pods */,
+				D78D00CB8F73557CEA96F331 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,8 +85,17 @@
 				B8977BBB2013DF3500633F51 /* LaunchScreen.storyboard */,
 				B8977BBE2013DF3500633F51 /* Info.plist */,
 				B8977BBF2013DF3500633F51 /* main.m */,
+				B8977BC62013E56C00633F51 /* GoogleService-Info.plist */,
 			);
 			path = Unplug;
+			sourceTree = "<group>";
+		};
+		D78D00CB8F73557CEA96F331 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A634E29061E213749DEBED5 /* libPods-Unplug.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,9 +105,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8977BC32013DF3500633F51 /* Build configuration list for PBXNativeTarget "Unplug" */;
 			buildPhases = (
+				5CEE9457B5996699D5679A16 /* [CP] Check Pods Manifest.lock */,
 				B8977BA92013DF3500633F51 /* Sources */,
 				B8977BAA2013DF3500633F51 /* Frameworks */,
 				B8977BAB2013DF3500633F51 /* Resources */,
+				A5DC09B34E35289A4BAEB3BF /* [CP] Embed Pods Frameworks */,
+				3EB31F1325D87030189999E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,12 +160,67 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8977BBD2013DF3500633F51 /* LaunchScreen.storyboard in Resources */,
+				B8977BC72013E56C00633F51 /* GoogleService-Info.plist in Resources */,
 				B8977BBA2013DF3500633F51 /* Assets.xcassets in Resources */,
 				B8977BB82013DF3500633F51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EB31F1325D87030189999E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Unplug/Pods-Unplug-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unplug/Pods-Unplug-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CEE9457B5996699D5679A16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Unplug-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5DC09B34E35289A4BAEB3BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unplug/Pods-Unplug-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B8977BA92013DF3500633F51 /* Sources */ = {
@@ -276,6 +361,7 @@
 		};
 		B8977BC42013DF3500633F51 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 856D6302B995B6B90B3F0E76 /* Pods-Unplug.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,6 +376,7 @@
 		};
 		B8977BC52013DF3500633F51 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91E933AAAA14C9980B1F60E3 /* Pods-Unplug.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
