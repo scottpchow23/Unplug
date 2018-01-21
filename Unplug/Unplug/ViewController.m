@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <FBSDKLoginKit.h>
-#import <FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FirebaseAuth/FirebaseAuth.h>
 #import "FirebaseHelper.h"
 

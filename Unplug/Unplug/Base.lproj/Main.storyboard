@@ -216,15 +216,15 @@
             </objects>
             <point key="canvasLocation" x="2969" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Room Stats View Controller-->
         <scene sceneID="Hbg-eI-k8R">
             <objects>
-                <viewController storyboardIdentifier="roomStats" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Vg-nD-ySK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="roomStats" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Vg-nD-ySK" customClass="RoomStatsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nPo-AY-6W6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL9-UK-71E">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL9-UK-71E" customClass="CountdownLabel" customModule="CountdownLabel">
                                 <rect key="frame" x="144" y="323" width="87" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -235,6 +235,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3VH-5C-V5J"/>
                     </view>
+                    <connections>
+                        <outlet property="countdownLabel" destination="UL9-UK-71E" id="Aye-V3-x3Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoC-1P-tXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
