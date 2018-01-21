@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CountdownLabel/CountdownLabel-Swift.h>
+#import "AppDelegate.h"
 
-@interface RoomStatsViewController : UIViewController
+@interface RoomStatsViewController : UIViewController <AppDelegateLaunchDelegate> {
+    BOOL _markBackgrounded;
+}
 @property (weak, nonatomic) IBOutlet CountdownLabel *countdownLabel;
 
 @end

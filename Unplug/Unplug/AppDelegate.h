@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol AppDelegateLaunchDelegate
+- (void)appTerminated;
+- (void)appBackgrounded;
+- (void)deviceLocked;
+@end
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) NSObject<AppDelegateLaunchDelegate> *delegate;
 
 @property (strong, nonatomic) UIWindow *window;
 
