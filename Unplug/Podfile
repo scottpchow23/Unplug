@@ -12,5 +12,4 @@ target 'Unplug' do
   pod 'Firebase/Auth'	
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
-  pod 'CountdownLabel'
 end

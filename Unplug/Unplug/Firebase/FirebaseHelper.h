@@ -39,4 +39,6 @@
 -(void)createAndJoinRoom:(Room *) room completion:(void(^)(BOOL)) completion;
 -(void)joinRoomWithRID:(NSString *)rid completion:(void(^)(BOOL)) completion;
 -(void)startRoom;
+
+-(void)getBetAmountForRID:(NSString *)rid completion:(void(^)(NSNumber *betAmount)) completion;
 @end

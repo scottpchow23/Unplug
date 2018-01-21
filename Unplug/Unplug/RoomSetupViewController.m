@@ -7,6 +7,8 @@
 //
 
 #import "RoomSetupViewController.h"
+#import "RoomStatsViewController.h"
+#import "QRCodeGeneratorViewController.h"
 #import "FirebaseHelper.h"
 #import "Room.h"
 
@@ -46,14 +48,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"createLobby"]) {
+        QRCodeGeneratorViewController *destination = segue.destinationViewController;
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        formatter.numberStyle = NSNumberFormatterDecimalStyle;
+        destination.betAmount = [formatter numberFromString:_betAmountField.text];
+    }
 }
-*/
 
 @end

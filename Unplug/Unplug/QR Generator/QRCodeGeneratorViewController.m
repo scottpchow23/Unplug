@@ -8,6 +8,7 @@
 
 #import "QRCodeGeneratorViewController.h"
 #import "FirebaseHelper.h"
+#import "RoomStatsViewController.h"
 #import <CoreImage/CoreImage.h>
 
 @interface QRCodeGeneratorViewController ()
@@ -117,6 +118,13 @@
 }
 - (IBAction)startRoomTUI:(id)sender {
     [FirebaseHelper.sharedWrapper startRoom];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"roomStats"]) {
+        RoomStatsViewController *destination = segue.destinationViewController;
+        destination.betAmount = self.betAmount;
+    }
 }
 
 @end

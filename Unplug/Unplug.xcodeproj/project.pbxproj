@@ -20,6 +20,7 @@
 		B8977BDD20141FF700633F51 /* RoomSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BDC20141FF700633F51 /* RoomSetupViewController.m */; };
 		B8977BE02014234800633F51 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BDF2014234800633F51 /* Room.m */; };
 		B8977BE320144D9400633F51 /* RoomStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BE220144D9400633F51 /* RoomStatsViewController.m */; };
+		B8977BE620147E0E00633F51 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8977BE520147E0E00633F51 /* ResultsViewController.m */; };
 		F11E69D120140B6B005EF6C1 /* QRCameraSwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69CA20140B6B005EF6C1 /* QRCameraSwitchButton.m */; };
 		F11E69D220140B6B005EF6C1 /* QRCodeReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69CC20140B6B005EF6C1 /* QRCodeReaderViewController.m */; };
 		F11E69D320140B6B005EF6C1 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69CD20140B6B005EF6C1 /* QRCodeReaderView.m */; };
@@ -53,6 +54,8 @@
 		B8977BDF2014234800633F51 /* Room.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		B8977BE120144D9400633F51 /* RoomStatsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomStatsViewController.h; sourceTree = "<group>"; };
 		B8977BE220144D9400633F51 /* RoomStatsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoomStatsViewController.m; sourceTree = "<group>"; };
+		B8977BE420147E0E00633F51 /* ResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		B8977BE520147E0E00633F51 /* ResultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		F11E69C820140B6B005EF6C1 /* QRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderView.h; sourceTree = "<group>"; };
 		F11E69C920140B6B005EF6C1 /* QRCodeReaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeReaderDelegate.h; sourceTree = "<group>"; };
 		F11E69CA20140B6B005EF6C1 /* QRCameraSwitchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCameraSwitchButton.m; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				B8977BDC20141FF700633F51 /* RoomSetupViewController.m */,
 				B8977BE120144D9400633F51 /* RoomStatsViewController.h */,
 				B8977BE220144D9400633F51 /* RoomStatsViewController.m */,
+				B8977BE420147E0E00633F51 /* ResultsViewController.h */,
+				B8977BE520147E0E00633F51 /* ResultsViewController.m */,
 			);
 			path = Unplug;
 			sourceTree = "<group>";
@@ -302,7 +307,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Unplug/Pods-Unplug-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/CountdownLabel/CountdownLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -313,7 +317,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountdownLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -342,6 +345,7 @@
 				F11E69DB20141689005EF6C1 /* QRCodeGeneratorViewController.m in Sources */,
 				F11E69D120140B6B005EF6C1 /* QRCameraSwitchButton.m in Sources */,
 				B8977BB52013DF3500633F51 /* ViewController.m in Sources */,
+				B8977BE620147E0E00633F51 /* ResultsViewController.m in Sources */,
 				F11E69D420140B6B005EF6C1 /* QRCodeReader.m in Sources */,
 				B8977BD72013F5D000633F51 /* FirebaseHelper.m in Sources */,
 				B8977BC02013DF3500633F51 /* main.m in Sources */,

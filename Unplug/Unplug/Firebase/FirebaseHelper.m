@@ -139,4 +139,14 @@ static FirebaseHelper *sharedAPIWrapper;
                                  }];
 }
 
+-(void)getBetAmountForRID:(NSString *)rid completion:(void(^)(NSNumber *betAmount)) completion {
+    FIRDatabaseReference *roomRef = [[ref child:@"rooms"] child:rid];
+    [roomRef observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        if(![snapshot.value isEqual:[NSNull null]]) {
+            NSNumber *betAmount = snapshot.value[@"betAmount"];
+            completion(betAmount);
+        }
+    }];
+}
+
 @end

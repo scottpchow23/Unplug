@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CountdownLabel/CountdownLabel-Swift.h>
 #import "AppDelegate.h"
 
 @interface RoomStatsViewController : UIViewController <AppDelegateLaunchDelegate> {
     BOOL _markBackgrounded;
 }
-@property (weak, nonatomic) IBOutlet CountdownLabel *countdownLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statLabel;
+@property NSString *loserName;
+@property NSNumber *betAmount;
+//@property (weak, nonatomic) IBOutlet CountdownLabel *countdownLabel;
 
 @end

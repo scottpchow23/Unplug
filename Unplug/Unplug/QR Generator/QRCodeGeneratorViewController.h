@@ -13,5 +13,5 @@
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableDictionary *uidAndNameDict;
-
+@property NSNumber *betAmount;
 @end

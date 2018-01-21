@@ -8,6 +8,8 @@
 
 #import "RoomStatsViewController.h"
 #import "FirebaseHelper.h"
+#import "ResultsViewController.h"
+
 #import <UserNotifications/UserNotifications.h>
 
 @interface RoomStatsViewController ()
@@ -22,7 +24,52 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     [appDelegate setDelegate:self];
     
-    // Do any additional setup after loading the view.
+    [self setUpLabel];
+}
+
+- (void)setUpLabel {
+    [FirebaseHelper.sharedWrapper getBetAmountForRID:[FirebaseHelper.sharedWrapper getCurrentRID] completion:^(NSNumber *betAmount) {
+        self.betAmount = betAmount;
+        self.statLabel.text = [NSString stringWithFormat:@"If you leave, you'll owe everyone $%@.", self.betAmount];
+    }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self setUpListener];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self tearDownListener];
+}
+
+-(void) setUpListener {
+    FIRDatabaseReference *roomUsersRef = [[[[FIRDatabase database].reference child:@"rooms"] child:[FirebaseHelper.sharedWrapper getCurrentRID]] child:@"users"];
+    [roomUsersRef observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        NSString *loserName = @"";
+        for (FIRDataSnapshot *snap in snapshot.children) {
+            if(![snap.value[@"time"] isEqual:@0]) {
+                loserName = snap.value[@"name"];
+            }
+        }
+        NSLog(@"The loser is: %@",loserName);
+        if(loserName.length > 0) {
+            self.loserName = loserName;
+            [self performSegueWithIdentifier:@"toResults" sender:self];
+        }
+    }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"toResults"]) {
+        ResultsViewController *destination = segue.destinationViewController;
+        destination.loserName = self.loserName;
+        destination.betAmount = self.betAmount;
+    }
+}
+
+-(void) tearDownListener {
+    FIRDatabaseReference *roomUsersRef = [[[[FIRDatabase database].reference child:@"rooms"] child:[FirebaseHelper.sharedWrapper getCurrentRID]] child:@"users"];
+    [roomUsersRef removeAllObservers];
 }
 
 - (void)appBackgrounded {

@@ -224,48 +224,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL9-UK-71E" customClass="CountdownLabel" customModule="CountdownLabel">
-                                <rect key="frame" x="144" y="323" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room stats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL9-UK-71E">
+                                <rect key="frame" x="8" y="333" width="359" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3VH-5C-V5J" firstAttribute="trailing" secondItem="UL9-UK-71E" secondAttribute="trailing" constant="8" id="dMF-JF-jX6"/>
+                            <constraint firstItem="UL9-UK-71E" firstAttribute="leading" secondItem="3VH-5C-V5J" secondAttribute="leading" constant="8" id="jGx-PF-i7k"/>
+                            <constraint firstItem="UL9-UK-71E" firstAttribute="centerY" secondItem="3VH-5C-V5J" secondAttribute="centerY" id="rdV-ih-oKo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3VH-5C-V5J"/>
                     </view>
                     <connections>
-                        <outlet property="countdownLabel" destination="UL9-UK-71E" id="Aye-V3-x3Q"/>
+                        <outlet property="statLabel" destination="UL9-UK-71E" id="nAi-bd-y7d"/>
+                        <segue destination="jbu-Wu-Fon" kind="show" identifier="toResults" id="iMP-kH-0aM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoC-1P-tXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3708" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="QFE-eI-rHC">
             <objects>
-                <viewController id="jbu-Wu-Fon" sceneMemberID="viewController">
+                <viewController id="jbu-Wu-Fon" customClass="ResultsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q9f-mX-98F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary/Reset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-f6-mU0">
-                                <rect key="frame" x="123" y="323" width="129" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary/Reset" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdW-f6-mU0">
+                                <rect key="frame" x="8" y="333" width="359" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AM8-tr-AwA" firstAttribute="trailing" secondItem="cdW-f6-mU0" secondAttribute="trailing" constant="8" id="Stb-dM-0DY"/>
+                            <constraint firstItem="cdW-f6-mU0" firstAttribute="centerY" secondItem="AM8-tr-AwA" secondAttribute="centerY" id="cGy-To-Qsu"/>
+                            <constraint firstItem="cdW-f6-mU0" firstAttribute="leading" secondItem="AM8-tr-AwA" secondAttribute="leading" constant="8" id="xr0-Jg-YIk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AM8-tr-AwA"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="cdW-f6-mU0" id="VY6-uR-DU3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KT4-up-uiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4393" y="134"/>
+            <point key="canvasLocation" x="4455" y="134"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
