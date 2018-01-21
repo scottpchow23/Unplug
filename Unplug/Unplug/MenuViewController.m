@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "QRCodeReaderViewController.h"
+#import "FirebaseHelper.h"
 
 @interface MenuViewController ()
 
@@ -21,6 +22,11 @@
     [reader setCompletionWithBlock:^(NSString * _Nullable resultAsString) {
         [self dismissViewControllerAnimated:YES completion:nil];
         NSLog(@"Result: %@", resultAsString);
+        [FirebaseHelper.sharedWrapper joinRoomWithRID:resultAsString completion:^(BOOL joined) {
+            if(joined) {
+                [self performSegueWithIdentifier:@"joinLobby" sender:self];
+            }
+        }];
     }];
 }
 

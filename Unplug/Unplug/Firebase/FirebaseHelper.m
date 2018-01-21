@@ -86,4 +86,45 @@ static FirebaseHelper *sharedAPIWrapper;
     }
 }
 
+-(void)setCurrentRID:(NSString *) rid {
+    currentRID = rid;
+}
+-(NSString *)getCurrentRID {
+    return currentRID;
+}
+
+-(void)createAndJoinRoom:(Room *) room completion:(void(^)(BOOL)) completion {
+    FIRDatabaseReference *roomRef = [[ref child:@"rooms"] childByAutoId];
+    NSMutableDictionary *values = [room toDict];
+    NSDictionary *valueDict = @{currentUser.uid : @0};
+    [values setValue:valueDict forKey:@"users"];
+    [roomRef setValue:values withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        if(error == NULL) {
+            [self setCurrentRID:ref.key];
+            completion(YES);
+        } else {
+            NSLog(@"CREATE AND JOIN ERROR: %@", error.localizedDescription);
+            completion(NO);
+        }
+    }];
+    
+}
+
+-(void)joinRoomWithRID:(NSString *)rid completion:(void(^)(BOOL)) completion {
+    FIRDatabaseReference *roomRef = [[[ref child:@"rooms"] child:rid] child:@"users"];
+    NSDictionary *valueDict = @{currentUser.uid : @0};
+    [roomRef updateChildValues:valueDict withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
+        if(error == NULL) {
+            completion(YES);
+        } else {
+            NSLog(@"CREATE AND JOIN ERROR: %@", error.localizedDescription);
+            completion(NO);
+        }
+    }];
+}
+
+-(void)startRoom {
+    
+}
+
 @end

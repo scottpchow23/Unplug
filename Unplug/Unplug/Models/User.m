@@ -24,10 +24,10 @@
 }
 
 
--(NSDictionary *) toDict {
+-(NSMutableDictionary *) toDict {
     NSDictionary *dict = @{@"name" : self.name,
                            @"balance" : self.balance};
     
-    return dict;
+    return [dict mutableCopy];
 }
 @end

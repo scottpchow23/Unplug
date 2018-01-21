@@ -12,11 +12,11 @@
 #import <FirebaseAuth/FirebaseAuth.h>
 #import "FirebaseHelper.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

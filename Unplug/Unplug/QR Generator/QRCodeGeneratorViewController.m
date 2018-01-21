@@ -7,6 +7,7 @@
 //
 
 #import "QRCodeGeneratorViewController.h"
+#import "FirebaseHelper.h"
 #import <CoreImage/CoreImage.h>
 
 @interface QRCodeGeneratorViewController ()
@@ -23,10 +24,28 @@
     [super viewDidLoad];
     
     CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
-    [filter setValue:[@"Hello World" dataUsingEncoding:NSUTF8StringEncoding] forKey:@"inputMessage"];
+    [filter setValue:[[FirebaseHelper.sharedWrapper getCurrentRID] dataUsingEncoding:NSUTF8StringEncoding] forKey:@"inputMessage"];
     [filter setValue:@"Q" forKey:@"inputCorrectionLevel"];
     _qrCode.image = [self createNonInterpolatedUIImageFromCIImage:filter.outputImage withScale:10];
-    // Do any additional setup after loading the view from its nib.
+    
+    
+    
+    
+}
+
+- (void) reloadTableView {
+    
+}
+
+- (void) setUpListener {
+    FIRDatabaseReference *roomUsersRef = [[[[FIRDatabase database].reference child:@"rooms"] child:[FirebaseHelper.sharedWrapper getCurrentRID]] child:@"users"];
+    [roomUsersRef observeEventType:FIRDataEventTypeChildChanged withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        
+    }];
+}
+
+- (void) tearDownListener {
+    
 }
 
 - (UIImage *)createNonInterpolatedUIImageFromCIImage:(CIImage *)image withScale:(CGFloat)scale
@@ -75,15 +94,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)startRoomTUI:(id)sender {
+    [FirebaseHelper.sharedWrapper startRoom];
 }
-*/
 
 @end

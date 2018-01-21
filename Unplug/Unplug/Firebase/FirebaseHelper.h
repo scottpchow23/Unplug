@@ -12,9 +12,11 @@
 #import <FBSDKCoreKit.h>
 #import <FBSDKLoginKit.h>
 #import "User.h"
+#import "Room.h"
 
 @interface FirebaseHelper : NSObject {
     User *currentUser;
+    NSString *currentRID;
     @private FIRDatabaseReference* ref;
 }
 
@@ -27,5 +29,12 @@
 -(void)setCurrentUser:(User *) user;
 -(User *)getCurrentUser;
 
+-(void)setCurrentRID:(NSString *) rid;
+-(NSString *)getCurrentRID;
+
 -(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error completion:(void (^)(BOOL)) completion;
+
+-(void)createAndJoinRoom:(Room *) room completion:(void(^)(BOOL)) completion;
+-(void)joinRoomWithRID:(NSString *)rid completion:(void(^)(BOOL)) completion;
+-(void)startRoom;
 @end

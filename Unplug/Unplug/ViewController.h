@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FBSDKLoginKit.h>
 
-@interface ViewController : UIViewController <FBSDKLoginButtonDelegate>
+@interface LoginViewController : UIViewController <FBSDKLoginButtonDelegate>
 
 
 @end
