@@ -53,6 +53,7 @@
                 }
             } else if ([snap2.key isEqualToString:@"timeStart"] && ![snap2.value isEqual:@0]){
                 NSLog(@"Started!");
+                [self performSegueWithIdentifier:@"roomStats" sender:self];
             }
         }
     };

@@ -209,6 +209,7 @@
                     <connections>
                         <outlet property="_qrCode" destination="F75-d4-dFu" id="IOi-8P-14H"/>
                         <outlet property="tableView" destination="Kzb-DA-u9S" id="pvu-sI-o4H"/>
+                        <segue destination="0Vg-nD-ySK" kind="show" identifier="roomStats" id="AUd-rM-T0S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQr-FF-u45" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -218,7 +219,7 @@
         <!--View Controller-->
         <scene sceneID="Hbg-eI-k8R">
             <objects>
-                <viewController id="0Vg-nD-ySK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="roomStats" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Vg-nD-ySK" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nPo-AY-6W6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
