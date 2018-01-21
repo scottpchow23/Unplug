@@ -40,5 +40,5 @@
 -(void)joinRoomWithRID:(NSString *)rid completion:(void(^)(BOOL)) completion;
 -(void)startRoom;
 
--(void)getBetAmountForRID:(NSString *)rid completion:(void(^)(NSNumber *betAmount)) completion;
+-(void)getInfoForRID:(NSString *)rid completion:(void(^)(NSNumber *betAmount, NSNumber *startTime, NSNumber *timeLimit)) completion;
 @end

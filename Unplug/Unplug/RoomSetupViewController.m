@@ -22,6 +22,8 @@
     [super viewDidLoad];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeys)];
     [self.view addGestureRecognizer:tapGesture];
+    
+    [_timeLimitSpinner setCountDownDuration:60];
     // Do any additional setup after loading the view.
 }
 
@@ -34,6 +36,8 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
     newRoom.betAmount = [formatter numberFromString:_betAmountField.text];
+    if (newRoom.betAmount == nil)
+        return;
     newRoom.timeLimit = [NSNumber numberWithDouble:[_timeLimitSpinner countDownDuration]];
     newRoom.timeStart = @0;
     [FirebaseHelper.sharedWrapper createAndJoinRoom:newRoom completion:^(BOOL created) {

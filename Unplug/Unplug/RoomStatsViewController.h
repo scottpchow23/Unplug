@@ -11,10 +11,14 @@
 
 @interface RoomStatsViewController : UIViewController <AppDelegateLaunchDelegate> {
     BOOL _markBackgrounded;
+    NSTimer *_timer;
 }
 @property (weak, nonatomic) IBOutlet UILabel *statLabel;
 @property NSString *loserName;
 @property NSNumber *betAmount;
+@property NSNumber *startTime;
+@property NSNumber *timeLimit;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 //@property (weak, nonatomic) IBOutlet CountdownLabel *countdownLabel;
 
 @end

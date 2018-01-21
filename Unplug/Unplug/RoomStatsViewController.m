@@ -28,10 +28,37 @@
 }
 
 - (void)setUpLabel {
-    [FirebaseHelper.sharedWrapper getBetAmountForRID:[FirebaseHelper.sharedWrapper getCurrentRID] completion:^(NSNumber *betAmount) {
+    [FirebaseHelper.sharedWrapper getInfoForRID:[FirebaseHelper.sharedWrapper getCurrentRID] completion:^(NSNumber *betAmount, NSNumber *startTime, NSNumber *timeLimit) {
         self.betAmount = betAmount;
+        self.startTime = startTime;
+        self.timeLimit = timeLimit;
         self.statLabel.text = [NSString stringWithFormat:@"If you leave, you'll owe everyone $%@.", self.betAmount];
+        
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     }];
+}
+
+- (void)updateTimer {
+    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
+    NSLog(@"Now: %f", (float)now);
+    NSLog(@"Start: %f", self.startTime.doubleValue);
+    NSLog(@"Time Limit: %f", self.timeLimit.doubleValue);
+    NSTimeInterval final = self.startTime.doubleValue + self.timeLimit.doubleValue;
+    NSTimeInterval timeLeft = final - now;
+    
+    if (timeLeft < 1){
+        [_timer invalidate];
+        [self performSegueWithIdentifier:@"toResults" sender:self];
+        return;
+    }
+    
+    NSDateComponentsFormatter *formatter = [[NSDateComponentsFormatter alloc] init];
+    formatter.allowedUnits = NSCalendarUnitHour | NSCalendarUnitMinute |
+    NSCalendarUnitSecond;
+    formatter.zeroFormattingBehavior = NSDateComponentsFormatterZeroFormattingBehaviorPad;
+    NSString *timeLeftString = [formatter stringFromTimeInterval:timeLeft];
+    
+    [self.timerLabel setText:timeLeftString];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

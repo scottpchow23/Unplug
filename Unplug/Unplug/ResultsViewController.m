@@ -16,8 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *oweYou = [NSString stringWithFormat:@" lost! They owe you $%@.", self.betAmount];
-    self.resultLabel.text = [self.loserName stringByAppendingString:oweYou];
+    
+    if (self.loserName){
+        NSString *oweYou = [NSString stringWithFormat:@" lost! They owe you $%@.", self.betAmount];
+        self.resultLabel.text = [self.loserName stringByAppendingString:oweYou];
+    } else {
+        self.resultLabel.text = @"Congrats, no one used their phone!";
+    }
 }
 
 - (void)didReceiveMemoryWarning {

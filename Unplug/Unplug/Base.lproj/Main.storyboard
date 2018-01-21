@@ -123,7 +123,7 @@
                                     <action selector="startRoomTUI:" destination="RgM-G0-mbT" eventType="touchUpInside" id="Uys-Ns-RmW"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RsC-oo-yyW">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="60" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="RsC-oo-yyW">
                                 <rect key="frame" x="0.0" y="383" width="375" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="538188991.15507996">
@@ -225,7 +225,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room stats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UL9-UK-71E">
-                                <rect key="frame" x="8" y="333" width="359" height="21"/>
+                                <rect key="frame" x="8" y="264.5" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1at-SZ-ZMa">
+                                <rect key="frame" x="16" y="390" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -233,20 +239,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1at-SZ-ZMa" firstAttribute="leading" secondItem="3VH-5C-V5J" secondAttribute="leading" constant="16" id="7zD-Gc-b3X"/>
+                            <constraint firstItem="3VH-5C-V5J" firstAttribute="trailing" secondItem="1at-SZ-ZMa" secondAttribute="trailing" constant="16" id="Nlx-9B-7co"/>
+                            <constraint firstItem="3VH-5C-V5J" firstAttribute="trailing" secondItem="UL9-UK-71E" secondAttribute="trailing" constant="8" id="Zrc-I6-lc1"/>
                             <constraint firstItem="3VH-5C-V5J" firstAttribute="trailing" secondItem="UL9-UK-71E" secondAttribute="trailing" constant="8" id="dMF-JF-jX6"/>
                             <constraint firstItem="UL9-UK-71E" firstAttribute="leading" secondItem="3VH-5C-V5J" secondAttribute="leading" constant="8" id="jGx-PF-i7k"/>
-                            <constraint firstItem="UL9-UK-71E" firstAttribute="centerY" secondItem="3VH-5C-V5J" secondAttribute="centerY" id="rdV-ih-oKo"/>
+                            <constraint firstItem="UL9-UK-71E" firstAttribute="leading" secondItem="3VH-5C-V5J" secondAttribute="leading" constant="8" id="qgg-ko-0jd"/>
+                            <constraint firstItem="UL9-UK-71E" firstAttribute="centerY" secondItem="3VH-5C-V5J" secondAttribute="centerY" multiplier="0.8" id="rdV-ih-oKo"/>
+                            <constraint firstItem="1at-SZ-ZMa" firstAttribute="centerY" secondItem="nPo-AY-6W6" secondAttribute="centerY" multiplier="1.2" id="unh-1Z-bBz"/>
+                            <constraint firstItem="1at-SZ-ZMa" firstAttribute="centerX" secondItem="nPo-AY-6W6" secondAttribute="centerX" id="usN-gc-Dr8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3VH-5C-V5J"/>
                     </view>
                     <connections>
                         <outlet property="statLabel" destination="UL9-UK-71E" id="nAi-bd-y7d"/>
+                        <outlet property="timerLabel" destination="1at-SZ-ZMa" id="EEu-ap-HOq"/>
                         <segue destination="jbu-Wu-Fon" kind="show" identifier="toResults" id="iMP-kH-0aM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoC-1P-tXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3708" y="134"/>
+            <point key="canvasLocation" x="3708" y="133.5832083958021"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="QFE-eI-rHC">
@@ -281,6 +294,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PQm-bi-X9g"/>
+        <segue reference="AfE-Q6-YNJ"/>
     </inferredMetricsTieBreakers>
 </document>
