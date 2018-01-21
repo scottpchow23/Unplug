@@ -34,8 +34,10 @@
 -(void)setCurrentRID:(NSString *) rid;
 -(NSString *)getCurrentRID;
 
--(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error completion:(void (^)(BOOL)) completion;
+-(void)login:(UIViewController *)loginVC completion:(void(^)(BOOL)) completion;
 
+-(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error completion:(void (^)(BOOL)) completion;
+-(BOOL)logout;
 -(void)createAndJoinRoom:(Room *) room completion:(void(^)(BOOL)) completion;
 -(void)joinRoomWithRID:(NSString *)rid completion:(void(^)(BOOL)) completion;
 -(void)startRoom;

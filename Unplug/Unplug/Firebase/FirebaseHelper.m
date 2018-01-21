@@ -54,6 +54,50 @@ static FirebaseHelper *sharedAPIWrapper;
     return currentUser;
 }
 
+-(void)login:(UIViewController *)loginVC completion:(void(^)(BOOL)) completion {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile"]
+     fromViewController:loginVC
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+             completion(NO);
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+             completion(NO);
+         } else {
+             NSLog(@"Logged in");
+             FIRAuthCredential *credential = [FIRFacebookAuthProvider credentialWithAccessToken:[FBSDKAccessToken currentAccessToken].tokenString];
+             [[FIRAuth auth] signInWithCredential:credential completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+                 if (error != NULL) {
+                     return;
+                 }
+                 [FirebaseHelper.sharedWrapper getUserWithUID:user.uid completion:^(User *user) {
+                     if (user == NULL) {
+                         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields":@"name"}] startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                             if (error) {
+                                 NSLog(@"%@", error.localizedDescription);
+                             } else {
+                                 NSLog(@"fetched user:%@", result);
+                                 User *newUser = [[User alloc] init];
+                                 newUser.uid = [[FIRAuth auth] currentUser].uid;
+                                 newUser.name = [result objectForKey:@"name"];
+                                 newUser.balance = @0;
+                                 [FirebaseHelper.sharedWrapper createUser:newUser];
+                                 [FirebaseHelper.sharedWrapper setCurrentUser:newUser];
+                             }
+                         }];
+                     } else {
+                         [FirebaseHelper.sharedWrapper setCurrentUser:user];
+                     }
+                     completion(YES);
+                 }];
+             }];
+         }
+     }];
+}
+
 -(void)handleLogin:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error completion:(void (^)(BOOL)) completion {
     if (error == nil && !result.isCancelled) {
         
@@ -88,6 +132,16 @@ static FirebaseHelper *sharedAPIWrapper;
         NSLog(@"%@", error.localizedDescription);
         completion(NO);
     }
+}
+
+-(BOOL)logout{
+    NSError *signOutError;
+    BOOL status = [[FIRAuth auth] signOut:&signOutError];
+    FBSDKAccessToken.currentAccessToken = nil;
+    if (!status) {
+        NSLog(@"Error signing out: %@", signOutError);
+    }
+    return status;
 }
 
 -(void)setCurrentRID:(NSString *) rid {

@@ -30,6 +30,9 @@
 -(void) dismissKeys {
     [self.view endEditing:YES];
 }
+- (IBAction)backTUI:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (IBAction)startRoomTUI:(id)sender {
     Room *newRoom = [[Room alloc] init];

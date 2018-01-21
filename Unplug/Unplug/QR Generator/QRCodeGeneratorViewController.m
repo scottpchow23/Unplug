@@ -109,6 +109,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FriendIdentifier];
     }
     cell.textLabel.text = [self.uidAndNameDict objectForKey:key];
+    [cell.textLabel setFont:[UIFont fontWithName:@"Avenir Next" size:17]];
     return cell;
 }
 

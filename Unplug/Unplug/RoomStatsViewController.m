@@ -118,8 +118,8 @@
                 return [FIRTransactionResult successWithValue:currentData];
             } andCompletionBlock:^(NSError * _Nullable error, BOOL committed, FIRDataSnapshot * _Nullable snapshot) {
                 UNMutableNotificationContent *content = [UNMutableNotificationContent new];
-                content.title = @"Loser";
-                content.body = @"You Lost";
+                content.title = @"You lost!";
+                content.body = [NSString stringWithFormat:@"You owe everyone $%@.", self.betAmount];
                 UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"loserIdentifier" content:content trigger:nil];
                 UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
                 [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
