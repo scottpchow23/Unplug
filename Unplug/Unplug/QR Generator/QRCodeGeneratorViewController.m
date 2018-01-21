@@ -41,22 +41,25 @@
 }
 
 - (void) setUpListener {
-    FIRDatabaseReference *roomUsersRef = [[[[FIRDatabase database].reference child:@"rooms"] child:[FirebaseHelper.sharedWrapper getCurrentRID]] child:@"users"];
-    [roomUsersRef observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        for (FIRDataSnapshot *snap in snapshot.children) {
-            [self.uidAndNameDict setValue:snap.value[@"name"] forKey:snap.key];
-            NSLog(@"%@", self.uidAndNameDict);
-            [self.tableView reloadData];
+    FIRDatabaseReference *roomUsersRef = [[[FIRDatabase database].reference child:@"rooms"] child:[FirebaseHelper.sharedWrapper getCurrentRID]];
+    typedef void (^ObserveEventBlock)(FIRDataSnapshot * _Nonnull snapshot);
+    ObserveEventBlock observeEventBlock = ^(FIRDataSnapshot * _Nonnull snapshot){
+        for (FIRDataSnapshot *snap2 in snapshot.children){
+            if ([snap2.key isEqualToString:@"users"]){
+                for (FIRDataSnapshot *snap in snap2.children) {
+                    [self.uidAndNameDict setValue:snap.value[@"name"] forKey:snap.key];
+                    NSLog(@"%@", self.uidAndNameDict);
+                    [self.tableView reloadData];
+                }
+            } else if ([snap2.key isEqualToString:@"timeStart"] && ![snap2.value isEqual:@0]){
+                NSLog(@"Started!");
+            }
         }
-    }];
+    };
     
-    [roomUsersRef observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        for (FIRDataSnapshot *snap in snapshot.children) {
-            [self.uidAndNameDict setValue:snap.value[@"name"] forKey:snap.key];
-            NSLog(@"%@", self.uidAndNameDict);
-            [self.tableView reloadData];
-        }
-    }];
+    [roomUsersRef observeSingleEventOfType:FIRDataEventTypeValue withBlock:observeEventBlock];
+    
+    [roomUsersRef observeEventType:FIRDataEventTypeValue withBlock:observeEventBlock];
 }
 
 - (void) tearDownListener {

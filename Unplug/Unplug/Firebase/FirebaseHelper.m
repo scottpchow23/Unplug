@@ -132,7 +132,11 @@ static FirebaseHelper *sharedAPIWrapper;
 }
 
 -(void)startRoom {
-    
+    NSNumber *timestamp = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
+    FIRDatabaseReference *roomRef = [[ref child:@"rooms"] child:self.getCurrentRID];
+    [roomRef updateChildValues:@{
+                                 @"timeStart":timestamp
+                                 }];
 }
 
 @end
