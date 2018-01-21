@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.delegate = nil;
     
     if (self.loserName){
@@ -25,7 +26,6 @@
         self.resultLabel.text = [self.loserName stringByAppendingString:oweYou];
     } else {
         self.resultLabel.text = @"Congrats, no one used their phone!";
-        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     }
 }
 
