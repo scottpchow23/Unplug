@@ -83,25 +83,58 @@
             </objects>
             <point key="canvasLocation" x="1208.8" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Code Generator View Controller-->
         <scene sceneID="OMx-sh-MHV">
             <objects>
-                <viewController storyboardIdentifier="GenerateQR" useStoryboardIdentifierAsRestorationIdentifier="YES" id="73k-Wc-0xq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qne-4H-Ru8">
+                <viewController storyboardIdentifier="GenerateQR" useStoryboardIdentifierAsRestorationIdentifier="YES" id="73k-Wc-0xq" customClass="QRCodeGeneratorViewController" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9M1-fW-Udo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room setup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aah-Px-HWR">
-                                <rect key="frame" x="140" y="306" width="94" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kzb-DA-u9S">
+                                <rect key="frame" x="16" y="306" width="343" height="323"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV0-Xi-TJw">
+                                <rect key="frame" x="164" y="637" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="73k-Wc-0xq" eventType="touchUpInside" id="Md5-GN-IZ8"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F75-d4-dFu">
+                                <rect key="frame" x="88" y="38" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="RXN-TI-I37"/>
+                                    <constraint firstAttribute="width" constant="200" id="x5I-zc-W35"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends checked in:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8e-ZN-R75">
+                                <rect key="frame" x="113" y="253" width="148.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="tGF-kH-JaO"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="F75-d4-dFu" firstAttribute="top" secondItem="FO9-OY-B60" secondAttribute="top" constant="18" id="26L-y3-mj1"/>
+                            <constraint firstItem="SV0-Xi-TJw" firstAttribute="centerX" secondItem="9M1-fW-Udo" secondAttribute="centerX" id="9oW-8C-RlH"/>
+                            <constraint firstItem="Kzb-DA-u9S" firstAttribute="leading" secondItem="FO9-OY-B60" secondAttribute="leading" constant="16" id="Bec-QS-tBh"/>
+                            <constraint firstItem="FO9-OY-B60" firstAttribute="trailing" secondItem="Kzb-DA-u9S" secondAttribute="trailing" constant="16" id="G3q-Uy-yQn"/>
+                            <constraint firstItem="Kzb-DA-u9S" firstAttribute="top" secondItem="o8e-ZN-R75" secondAttribute="bottom" constant="32" id="JPd-ty-2fO"/>
+                            <constraint firstItem="o8e-ZN-R75" firstAttribute="centerX" secondItem="9M1-fW-Udo" secondAttribute="centerX" id="ZxL-Xv-ePU"/>
+                            <constraint firstItem="SV0-Xi-TJw" firstAttribute="top" secondItem="Kzb-DA-u9S" secondAttribute="bottom" constant="8" id="ev8-oB-tFW"/>
+                            <constraint firstItem="o8e-ZN-R75" firstAttribute="top" secondItem="F75-d4-dFu" secondAttribute="bottom" constant="15" id="kXC-VM-A9G"/>
+                            <constraint firstItem="SV0-Xi-TJw" firstAttribute="bottom" secondItem="FO9-OY-B60" secondAttribute="bottom" id="uK7-ah-fo1"/>
+                            <constraint firstItem="Kzb-DA-u9S" firstAttribute="top" secondItem="F75-d4-dFu" secondAttribute="bottom" constant="68" id="xS1-Xj-Pxj"/>
+                            <constraint firstItem="F75-d4-dFu" firstAttribute="centerX" secondItem="9M1-fW-Udo" secondAttribute="centerX" id="xc6-xF-XZL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FO9-OY-B60"/>
                     </view>
+                    <connections>
+                        <outlet property="_qrCode" destination="F75-d4-dFu" id="IOi-8P-14H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQr-FF-u45" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

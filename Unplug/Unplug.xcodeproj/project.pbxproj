@@ -22,6 +22,7 @@
 		F11E69D320140B6B005EF6C1 /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69CD20140B6B005EF6C1 /* QRCodeReaderView.m */; };
 		F11E69D420140B6B005EF6C1 /* QRCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69D020140B6B005EF6C1 /* QRCodeReader.m */; };
 		F11E69D720140BB0005EF6C1 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69D620140BB0005EF6C1 /* MenuViewController.m */; };
+		F11E69DB20141689005EF6C1 /* QRCodeGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11E69DA20141689005EF6C1 /* QRCodeGeneratorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		F11E69D020140B6B005EF6C1 /* QRCodeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeReader.m; sourceTree = "<group>"; };
 		F11E69D520140BB0005EF6C1 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		F11E69D620140BB0005EF6C1 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		F11E69D920141689005EF6C1 /* QRCodeGeneratorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGeneratorViewController.h; sourceTree = "<group>"; };
+		F11E69DA20141689005EF6C1 /* QRCodeGeneratorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGeneratorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 		B8977BAF2013DF3500633F51 /* Unplug */ = {
 			isa = PBXGroup;
 			children = (
+				F11E69D820141679005EF6C1 /* QR Generator */,
 				F11E69C720140B6B005EF6C1 /* QR */,
 				B8977BD82013F5D900633F51 /* Firebase */,
 				B8977BD42013F21400633F51 /* Models */,
@@ -157,6 +161,15 @@
 				F11E69D020140B6B005EF6C1 /* QRCodeReader.m */,
 			);
 			path = QR;
+			sourceTree = "<group>";
+		};
+		F11E69D820141679005EF6C1 /* QR Generator */ = {
+			isa = PBXGroup;
+			children = (
+				F11E69D920141689005EF6C1 /* QRCodeGeneratorViewController.h */,
+				F11E69DA20141689005EF6C1 /* QRCodeGeneratorViewController.m */,
+			);
+			path = "QR Generator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +304,7 @@
 				F11E69D220140B6B005EF6C1 /* QRCodeReaderViewController.m in Sources */,
 				F11E69D320140B6B005EF6C1 /* QRCodeReaderView.m in Sources */,
 				B8977BD32013F21000633F51 /* User.m in Sources */,
+				F11E69DB20141689005EF6C1 /* QRCodeGeneratorViewController.m in Sources */,
 				F11E69D120140B6B005EF6C1 /* QRCameraSwitchButton.m in Sources */,
 				B8977BB52013DF3500633F51 /* ViewController.m in Sources */,
 				F11E69D420140B6B005EF6C1 /* QRCodeReader.m in Sources */,
