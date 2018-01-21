@@ -40,7 +40,7 @@
 - (void) setUpListener {
     FIRDatabaseReference *roomUsersRef = [[[[FIRDatabase database].reference child:@"rooms"] child:[FirebaseHelper.sharedWrapper getCurrentRID]] child:@"users"];
     [roomUsersRef observeEventType:FIRDataEventTypeChildChanged withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        
+        NSLog(snapshot);
     }];
 }
 

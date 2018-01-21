@@ -96,7 +96,8 @@ static FirebaseHelper *sharedAPIWrapper;
 -(void)createAndJoinRoom:(Room *) room completion:(void(^)(BOOL)) completion {
     FIRDatabaseReference *roomRef = [[ref child:@"rooms"] childByAutoId];
     NSMutableDictionary *values = [room toDict];
-    NSDictionary *valueDict = @{currentUser.uid : @0};
+    NSDictionary *valueDict = @{currentUser.uid : @{@"name" : currentUser.name,
+                                                    @"time" : @0}};
     [values setValue:valueDict forKey:@"users"];
     [roomRef setValue:values withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
         if(error == NULL) {
@@ -112,9 +113,11 @@ static FirebaseHelper *sharedAPIWrapper;
 
 -(void)joinRoomWithRID:(NSString *)rid completion:(void(^)(BOOL)) completion {
     FIRDatabaseReference *roomRef = [[[ref child:@"rooms"] child:rid] child:@"users"];
-    NSDictionary *valueDict = @{currentUser.uid : @0};
+    NSDictionary *valueDict = @{currentUser.uid : @{@"name" : currentUser.name,
+                                                    @"time" : @0}};
     [roomRef updateChildValues:valueDict withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
         if(error == NULL) {
+            [self setCurrentRID:ref.key];
             completion(YES);
         } else {
             NSLog(@"CREATE AND JOIN ERROR: %@", error.localizedDescription);
