@@ -152,7 +152,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kzb-DA-u9S">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kzb-DA-u9S">
                                 <rect key="frame" x="16" y="306" width="343" height="323"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -195,6 +195,7 @@
                             <constraint firstItem="Kzb-DA-u9S" firstAttribute="leading" secondItem="FO9-OY-B60" secondAttribute="leading" constant="16" id="Bec-QS-tBh"/>
                             <constraint firstItem="FO9-OY-B60" firstAttribute="trailing" secondItem="hEo-6T-fpC" secondAttribute="trailing" constant="16" id="ERg-pP-yZx"/>
                             <constraint firstItem="FO9-OY-B60" firstAttribute="trailing" secondItem="Kzb-DA-u9S" secondAttribute="trailing" constant="16" id="G3q-Uy-yQn"/>
+                            <constraint firstItem="hEo-6T-fpC" firstAttribute="top" secondItem="Kzb-DA-u9S" secondAttribute="bottom" constant="8" id="J9n-Ib-nDt"/>
                             <constraint firstItem="Kzb-DA-u9S" firstAttribute="top" secondItem="o8e-ZN-R75" secondAttribute="bottom" constant="32" id="JPd-ty-2fO"/>
                             <constraint firstItem="o8e-ZN-R75" firstAttribute="centerX" secondItem="9M1-fW-Udo" secondAttribute="centerX" id="ZxL-Xv-ePU"/>
                             <constraint firstItem="hEo-6T-fpC" firstAttribute="bottom" secondItem="FO9-OY-B60" secondAttribute="bottom" id="fSc-iT-6Ys"/>
@@ -207,6 +208,7 @@
                     </view>
                     <connections>
                         <outlet property="_qrCode" destination="F75-d4-dFu" id="IOi-8P-14H"/>
+                        <outlet property="tableView" destination="Kzb-DA-u9S" id="pvu-sI-o4H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQr-FF-u45" userLabel="First Responder" sceneMemberID="firstResponder"/>

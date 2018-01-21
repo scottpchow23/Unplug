@@ -11,6 +11,7 @@
 @interface QRCodeGeneratorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     IBOutlet UIImageView *_qrCode;
 }
-@property NSMutableArray *userArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSMutableDictionary *uidAndNameDict;
 
 @end
