@@ -49,7 +49,7 @@
         <!--Menu View Controller-->
         <scene sceneID="fxA-hX-giB">
             <objects>
-                <viewController storyboardIdentifier="Setup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Kb-sq-xvF" customClass="MenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Kb-sq-xvF" customClass="MenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jYC-Lb-cHD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -265,6 +265,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AfE-Q6-YNJ"/>
+        <segue reference="PQm-bi-X9g"/>
     </inferredMetricsTieBreakers>
 </document>

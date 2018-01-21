@@ -27,7 +27,11 @@ static FirebaseHelper *sharedAPIWrapper;
     return self;
 }
 
-
+-(void)getAndSetCurrentUser:(NSString *) uid {
+    [self getUserWithUID:uid completion:^(User *user) {
+        [self setCurrentUser:user];
+    }];
+}
 
 -(void)getUserWithUID: (NSString *) uid completion: (void (^)(User *)) completion {
     FIRDatabaseReference *userRef = [[ref child:@"users"] child:uid];
@@ -115,9 +119,10 @@ static FirebaseHelper *sharedAPIWrapper;
     FIRDatabaseReference *roomRef = [[[ref child:@"rooms"] child:rid] child:@"users"];
     NSDictionary *valueDict = @{currentUser.uid : @{@"name" : currentUser.name,
                                                     @"time" : @0}};
+    __block NSString *blockRID = rid;
     [roomRef updateChildValues:valueDict withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref) {
         if(error == NULL) {
-            [self setCurrentRID:ref.key];
+            [self setCurrentRID:blockRID];
             completion(YES);
         } else {
             NSLog(@"CREATE AND JOIN ERROR: %@", error.localizedDescription);

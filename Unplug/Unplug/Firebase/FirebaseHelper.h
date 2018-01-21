@@ -29,6 +29,8 @@
 -(void)setCurrentUser:(User *) user;
 -(User *)getCurrentUser;
 
+-(void)getAndSetCurrentUser:(NSString *) uid;
+
 -(void)setCurrentRID:(NSString *) rid;
 -(NSString *)getCurrentRID;
 

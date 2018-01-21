@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "FirebaseHelper.h"
+#import "MenuViewController.h"
 #import <FirebaseCore/FirebaseCore.h>
+#import <FirebaseAuth/FirebaseAuth.h>
 #import <FBSDKCoreKit.h>
 
 @interface AppDelegate ()
@@ -22,6 +25,14 @@
     [FIRApp configure];
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
     
+    if([FIRAuth auth].currentUser != NULL) {
+        [FirebaseHelper.sharedWrapper getAndSetCurrentUser:[FIRAuth auth].currentUser.uid];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        MenuViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MenuViewController"];
+        self.window.rootViewController = viewController;
+        [self.window makeKeyAndVisible];
+    }
     return YES;
 }
 

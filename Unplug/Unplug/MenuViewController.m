@@ -19,14 +19,17 @@
 - (IBAction)scanQRCode:(id)sender {
     QRCodeReaderViewController *reader = [[QRCodeReaderViewController alloc] initWithCancelButtonTitle:@"Cancel"];
     [self presentViewController:reader animated:YES completion:nil];
+    __block MenuViewController *menuViewController = self;
     [reader setCompletionWithBlock:^(NSString * _Nullable resultAsString) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-        NSLog(@"Result: %@", resultAsString);
-        [FirebaseHelper.sharedWrapper joinRoomWithRID:resultAsString completion:^(BOOL joined) {
-            if(joined) {
-                [self performSegueWithIdentifier:@"joinLobby" sender:self];
-            }
+        [self dismissViewControllerAnimated:YES completion:^{
+            NSLog(@"Result: %@", resultAsString);
+            [FirebaseHelper.sharedWrapper joinRoomWithRID:resultAsString completion:^(BOOL joined) {
+                if(joined) {
+                    [menuViewController performSegueWithIdentifier:@"joinLobby" sender:self];
+                }
+            }];
         }];
+        
     }];
 }
 

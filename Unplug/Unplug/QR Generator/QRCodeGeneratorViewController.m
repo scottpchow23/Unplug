@@ -17,6 +17,7 @@
 @implementation QRCodeGeneratorViewController
 
 - (IBAction)dismiss:(id)sender {
+    //    TODO: delete user from room when they leave
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -41,13 +42,20 @@
 
 - (void) setUpListener {
     FIRDatabaseReference *roomUsersRef = [[[[FIRDatabase database].reference child:@"rooms"] child:[FirebaseHelper.sharedWrapper getCurrentRID]] child:@"users"];
+    [roomUsersRef observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        for (FIRDataSnapshot *snap in snapshot.children) {
+            [self.uidAndNameDict setValue:snap.value[@"name"] forKey:snap.key];
+            NSLog(@"%@", self.uidAndNameDict);
+            [self.tableView reloadData];
+        }
+    }];
+    
     [roomUsersRef observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         for (FIRDataSnapshot *snap in snapshot.children) {
             [self.uidAndNameDict setValue:snap.value[@"name"] forKey:snap.key];
             NSLog(@"%@", self.uidAndNameDict);
             [self.tableView reloadData];
         }
-        
     }];
 }
 
