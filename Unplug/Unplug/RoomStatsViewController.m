@@ -23,7 +23,7 @@
     
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     [appDelegate setDelegate:self];
-    
+    [self.timerLabel setText: @"Getting time left..."];
     [self setUpLabel];
 }
 
