@@ -18,8 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeys)];
+    [self.view addGestureRecognizer:tapGesture];
     // Do any additional setup after loading the view.
 }
+
+-(void) dismissKeys {
+    [self.view endEditing:YES];
+}
+
 - (IBAction)startRoomTUI:(id)sender {
     Room *newRoom = [[Room alloc] init];
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
