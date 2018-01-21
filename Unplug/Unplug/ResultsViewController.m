@@ -7,6 +7,7 @@
 //
 
 #import "ResultsViewController.h"
+#import "AppDelegate.h"
 
 @interface ResultsViewController ()
 
@@ -22,6 +23,8 @@
         self.resultLabel.text = [self.loserName stringByAppendingString:oweYou];
     } else {
         self.resultLabel.text = @"Congrats, no one used their phone!";
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        appDelegate.delegate = nil;
     }
 }
 
